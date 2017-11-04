@@ -1,12 +1,10 @@
-package com.synisys.api;
+package com.synisys.controller;
 
 import com.synisys.api.model.ClassifierDto;
+import com.synisys.api.model.ProjectDto;
+import com.synisys.api.model.ResponseDto;
 
-/**
- * Created by Tatevik.Arakelyan on 02-Nov-17.
- */
-public interface ClassifierService {
-
+public interface ClassifierControler {
     ClassifierDto getCountry(Integer id);
     ClassifierDto[] getCountries();
     ClassifierDto getDistrict(Integer id);
