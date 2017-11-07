@@ -61,7 +61,8 @@ public class DataService {
         p.setDescription("dfsfkjej o; oweo jt iwet weit t iwt ");
         p.setImplementationStatusId(1);
         p.setStartDate(new Date());
-        p.setEndDate(new Date());
+        Long num = 1589329989049L;
+        p.setEndDate(new Date(num));
         SectorDto[] s = {new SectorDto(1, 25), new SectorDto(2, 50)};
         p.setSectors(s);
         LocationDto[] l = {new LocationDto(1, 1, 30), new LocationDto(2, 3, 45)};
@@ -78,7 +79,8 @@ public class DataService {
         p.setDescription("gag hhth hrt hsjfj ");
         p.setImplementationStatusId(2);
         p.setStartDate(new Date());
-        p.setEndDate(new Date());
+        num = 1609329989049L;
+        p.setEndDate(new Date(num));
         SectorDto[] ss = {new SectorDto(1, 25), new SectorDto(2, 50)};
         p.setSectors(ss);
         LocationDto[] ll = {new LocationDto(1, 2, 30), new LocationDto(2, 4, 45)};
