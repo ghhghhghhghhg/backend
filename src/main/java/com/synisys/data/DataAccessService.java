@@ -5,7 +5,7 @@ import com.synisys.api.model.*;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class DataService {
+public class DataAccessService {
 
     private ArrayList<ProjectDto> projects = new ArrayList<>();
     private ArrayList<ClassifierDto> countries = new ArrayList<>();
@@ -53,7 +53,7 @@ public class DataService {
         this.implimentationStatuses = implimentationStatuses;
     }
 
-    public DataService() {
+    public DataAccessService() {
         ProjectDto p = new ProjectDto();
         p.setId(1);
         p.setCode("fd45ddfdf55 555");

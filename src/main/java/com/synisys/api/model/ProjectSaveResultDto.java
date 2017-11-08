@@ -1,7 +1,7 @@
 package com.synisys.api.model;
 
 /**
- * Created by Tatevik.Arakelyan on 02-Nov-17.
+ * @author Gor.Hakobyan
  */
 public class ProjectSaveResultDto {
     private Integer newId;

@@ -1,17 +1,15 @@
-package com.synisys.api;
+package com.synisys.data;
 
 
+import com.synisys.api.ProjectService;
 import com.synisys.api.model.*;
-import com.synisys.data.DataService;
 import org.springframework.stereotype.Service;
-
-import java.util.Date;
-import java.util.HashMap;
 
 @Service
 public class ProjectServiceImpl implements ProjectService {
 
-    DataService data = new DataService();
+    private DataAccessService data = new DataAccessService();
+
 
     @Override
     public ProjectDto[] getProjects() {
@@ -25,7 +23,7 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public ProjectDto getProject(Integer id) {
         for (int i = 0; i < data.getProjects().size(); ++i) {
-            if (data.getProjects().get(i).getId() == id) {
+            if (data.getProjects().get(i).getId().equals(id)) {
                 return data.getProjects().get(i);
             }
         }
@@ -36,7 +34,7 @@ public class ProjectServiceImpl implements ProjectService {
     public ResponseDto deleteProject(Integer id) {
         ResponseDto res = new ResponseDto(id, "Can not find project", false);
         for (int i = 0; i < data.getProjects().size(); ++i) {
-            if (data.getProjects().get(i).getId() == id) {
+            if (data.getProjects().get(i).getId().equals(id)) {
                 data.getProjects().remove(i);
                 res.setMessage("Project deleted");
                 res.setSuccess(true);
@@ -63,7 +61,7 @@ public class ProjectServiceImpl implements ProjectService {
     public ResponseDto putProject(ProjectDto project) {
         ResponseDto res = new ResponseDto(project.getId(), "Can not find project", false);
         for (int i = 0; i < data.getProjects().size(); ++i) {
-            if (data.getProjects().get(i).getId() == project.getId()) {
+            if (data.getProjects().get(i).getId().equals(project.getId())) {
                 data.getProjects().set(i, project);
                 res.setMessage("Project updated");
                 res.setSuccess(true);

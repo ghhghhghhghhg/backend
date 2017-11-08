@@ -1,8 +1,6 @@
-package com.synisys.controller;
+package com.synisys.api;
 
 import com.synisys.api.model.ClassifierDto;
-import com.synisys.api.model.ProjectDto;
-import com.synisys.api.model.ResponseDto;
 
 public interface ClassifierControler {
     ClassifierDto getCountry(Integer id);
@@ -12,4 +10,5 @@ public interface ClassifierControler {
     ClassifierDto getSector(Integer id);
     ClassifierDto[] getSectors();
     ClassifierDto[] getImplimentationStatuses();
+    ClassifierDto getImplimentationStatus(Integer id);
 }

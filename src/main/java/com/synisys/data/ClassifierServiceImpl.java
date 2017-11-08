@@ -1,15 +1,14 @@
-package com.synisys.api;
+package com.synisys.data;
 
+import com.synisys.api.ClassifierService;
 import com.synisys.api.model.ClassifierDto;
-import com.synisys.api.model.ProjectDto;
-import com.synisys.data.DataService;
 import org.springframework.stereotype.Service;
 
 
 @Service
 public class ClassifierServiceImpl implements ClassifierService {
 
-    DataService data = new DataService();
+    DataAccessService data = new DataAccessService();
 
     @Override
     public ClassifierDto getCountry(Integer id) {
@@ -89,5 +88,15 @@ public class ClassifierServiceImpl implements ClassifierService {
             implimentationStatuses[i] = data.getImplimentationStatuses().get(i);
         }
         return implimentationStatuses;
+    }
+
+    @Override
+    public ClassifierDto getImplimentationStatus(Integer id) {
+        for (int i = 0; i < data.getImplimentationStatuses().size(); ++i) {
+            if(data.getImplimentationStatuses().get(i).getId().equals(id)){
+                return data.getImplimentationStatuses().get(i);
+            }
+        }
+        return null;
     }
 }

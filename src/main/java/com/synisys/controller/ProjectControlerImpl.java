@@ -1,5 +1,6 @@
 package com.synisys.controller;
 
+import com.synisys.api.ProjectControler;
 import com.synisys.api.ProjectService;
 import com.synisys.api.model.ProjectDto;
 import com.synisys.api.model.ResponseDto;
@@ -12,30 +13,30 @@ import org.springframework.web.bind.annotation.*;
 public class ProjectControlerImpl implements ProjectControler {
 
     @Autowired
-    ProjectService ps;
+    ProjectService projectService;
 
     @RequestMapping("")
     public ProjectDto[] getProjects(){
-        return ps.getProjects();
+        return projectService.getProjects();
     }
 
     @RequestMapping("{id}")
     public ProjectDto getProject(@PathVariable("id") Integer id){
-        return ps.getProject(id);
+        return projectService.getProject(id);
     }
 
     @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
     public ResponseDto deleteProject(@PathVariable("id") Integer id) {
-        return ps.deleteProject(id);
+        return projectService.deleteProject(id);
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     public ResponseDto postProject(@RequestBody ProjectDto project) {
-        return ps.postProject(project);
+        return projectService.postProject(project);
     }
 
     @RequestMapping(value = "", method = RequestMethod.PUT)
     public ResponseDto putProject(@RequestBody ProjectDto project) {
-        return ps.putProject(project);
+        return projectService.putProject(project);
     }
 }

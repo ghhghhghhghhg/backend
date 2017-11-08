@@ -1,4 +1,4 @@
-package com.synisys.controller;
+package com.synisys.api;
 
 import com.synisys.api.model.ProjectDto;
 import com.synisys.api.model.ResponseDto;

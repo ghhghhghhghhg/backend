@@ -1,8 +1,5 @@
 package com.synisys.api.model;
 
-/**
- * Created by Gor.Hakobyan on 03-Nov-17.
- */
 public class ClassifierDto {
     private Integer id;
     private String name;
