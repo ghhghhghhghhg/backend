@@ -7,6 +7,8 @@ import java.util.Date;
 
 public class DataAccessService {
 
+    public static Integer id = 3;
+
     private ArrayList<ProjectDto> projects = new ArrayList<>();
     private ArrayList<ClassifierDto> countries = new ArrayList<>();
     private ArrayList<SubClassifierDto> districts = new ArrayList<>();
@@ -56,9 +58,9 @@ public class DataAccessService {
     public DataAccessService() {
         ProjectDto p = new ProjectDto();
         p.setId(1);
-        p.setCode("fd45ddfdf55 555");
-        p.setTitle("asjdhasukfhksdhfsh");
-        p.setDescription("dfsfkjej o; oweo jt iwet weit t iwt ");
+        p.setCode("AAA 555");
+        p.setTitle("Florence garden");
+        p.setDescription("Initializing Spring FrameworkServlet");
         p.setImplementationStatusId(1);
         p.setStartDate(new Date());
         Long num = 1589329989049L;
@@ -74,9 +76,9 @@ public class DataAccessService {
 
         p = new ProjectDto();
         p.setId(2);
-        p.setCode("645dfh 555");
-        p.setTitle("o;fjfij48");
-        p.setDescription("gag hhth hrt hsjfj ");
+        p.setCode("BBB 777");
+        p.setTitle("Hello World");
+        p.setDescription("Registering beans for JMX exposure on startup");
         p.setImplementationStatusId(2);
         p.setStartDate(new Date());
         num = 1609329989049L;

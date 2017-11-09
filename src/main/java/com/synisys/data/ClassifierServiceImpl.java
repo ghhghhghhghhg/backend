@@ -8,8 +8,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class ClassifierServiceImpl implements ClassifierService {
 
-    DataAccessService data = new DataAccessService();
+    private DataAccessService data = new DataAccessService();
 
+    /**
+     * Returned country by country ID
+     * @param id
+     * @return
+     */
     @Override
     public ClassifierDto getCountry(Integer id) {
         for (int i = 0; i < data.getCountries().size(); ++i) {
@@ -20,6 +25,10 @@ public class ClassifierServiceImpl implements ClassifierService {
         return null;
     }
 
+    /**
+     * Returned countries
+     * @return
+     */
     @Override
     public ClassifierDto[] getCountries() {
         ClassifierDto[] countries = new ClassifierDto[data.getCountries().size()];
@@ -29,6 +38,11 @@ public class ClassifierServiceImpl implements ClassifierService {
         return countries;
     }
 
+    /**
+     * Returned district by district ID
+     * @param id
+     * @return
+     */
     @Override
     public ClassifierDto getDistrict(Integer id) {
         for (int i = 0; i < data.getDistricts().size(); ++i) {
@@ -42,6 +56,11 @@ public class ClassifierServiceImpl implements ClassifierService {
         return null;
     }
 
+    /**
+     * Returned districts by country ID
+     * @param id
+     * @return
+     */
     @Override
     public ClassifierDto[] getDistricts(Integer id) {
         int size = 0;
@@ -62,6 +81,11 @@ public class ClassifierServiceImpl implements ClassifierService {
         return districts;
     }
 
+    /**
+     * Returned sector by sector ID
+     * @param id
+     * @return
+     */
     @Override
     public ClassifierDto getSector(Integer id) {
         for (int i = 0; i < data.getSectors().size(); ++i) {
@@ -72,6 +96,10 @@ public class ClassifierServiceImpl implements ClassifierService {
         return null;
     }
 
+    /**
+     * Returned sectors
+     * @return
+     */
     @Override
     public ClassifierDto[] getSectors() {
         ClassifierDto[] sectors = new ClassifierDto[data.getSectors().size()];
@@ -81,6 +109,10 @@ public class ClassifierServiceImpl implements ClassifierService {
         return sectors;
     }
 
+    /**
+     * Returned implementation satuses
+     * @return
+     */
     @Override
     public ClassifierDto[] getImplimentationStatuses() {
         ClassifierDto[] implimentationStatuses = new ClassifierDto[data.getImplimentationStatuses().size()];
@@ -90,6 +122,11 @@ public class ClassifierServiceImpl implements ClassifierService {
         return implimentationStatuses;
     }
 
+    /**
+     * Returned implementation status by implementation status ID
+     * @param id
+     * @return
+     */
     @Override
     public ClassifierDto getImplimentationStatus(Integer id) {
         for (int i = 0; i < data.getImplimentationStatuses().size(); ++i) {
