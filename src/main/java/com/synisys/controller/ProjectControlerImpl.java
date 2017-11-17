@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class ProjectControlerImpl implements ProjectControler {
 
     @Autowired
-    ProjectService projectService;
+    private ProjectService projectService;
 
     @RequestMapping("")
     public ProjectDto[] getProjects(){

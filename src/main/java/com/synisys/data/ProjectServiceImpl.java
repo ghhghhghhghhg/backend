@@ -59,8 +59,6 @@ public class ProjectServiceImpl implements ProjectService {
 
     /**
      * Save new project
-     * @param project
-     * @return
      */
     @Override
     public ResponseDto postProject(ProjectDto project) {
